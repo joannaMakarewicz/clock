@@ -41,21 +41,21 @@ html {
    width:400px;
    &__hour {
     background:red;
-    height:45%;
+    height:35%;
     position:absolute;
     right:50%;
     top:50%;
-    transform: rotate(0deg);
+    transform: rotate(180deg);
     transform-origin: top;
     width:5px;
    }
    &__minute {
     background:green;
-    height:45%;
+    height:40%;
     position:absolute;
     right:50%;
     top:50%;
-    transform: rotate(0deg);
+    transform: rotate(180deg);
     transform-origin: top;
     width:3px;
    }
@@ -65,8 +65,10 @@ html {
     position:absolute;
     right:50%;
     top:50%;
-    transform: rotate(0deg);
+    transform: rotate(180deg);
     transform-origin: top;
+    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
+    transition:all 0.05s;
     width:1px;
    }
   }
