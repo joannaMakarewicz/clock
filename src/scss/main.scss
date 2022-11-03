@@ -21,9 +21,53 @@ html {
   }
   
   body {
-    background: #33CCCC;
+    align-items:center;
     animation: color 9s infinite linear;
+    background: #33CCCC;
+    display:flex;
+    justify-content:center;
     text-align: center;
-    padding: 2em;
+    min-width:100vw;
+    min-height:100vh;
+    padding:16px;
+  }
+
+  .clock {
+    background:none;
+    border:13px solid white;
+    border-radius:50%;
+   height:400px;
+   position:relative;
+   width:400px;
+   &__hour {
+    background:red;
+    height:45%;
+    position:absolute;
+    right:50%;
+    top:50%;
+    transform: rotate(0deg);
+    transform-origin: top;
+    width:5px;
+   }
+   &__minute {
+    background:green;
+    height:45%;
+    position:absolute;
+    right:50%;
+    top:50%;
+    transform: rotate(0deg);
+    transform-origin: top;
+    width:3px;
+   }
+   &__second {
+    background:black;
+    height:45%;
+    position:absolute;
+    right:50%;
+    top:50%;
+    transform: rotate(0deg);
+    transform-origin: top;
+    width:1px;
+   }
   }
 
