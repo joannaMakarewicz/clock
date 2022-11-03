@@ -47,6 +47,8 @@ html {
     top:50%;
     transform: rotate(180deg);
     transform-origin: top;
+    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
+    transition:all 0.05s;
     width:5px;
    }
    &__minute {
@@ -57,6 +59,8 @@ html {
     top:50%;
     transform: rotate(180deg);
     transform-origin: top;
+    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
+    transition:all 0.05s;
     width:3px;
    }
    &__second {
