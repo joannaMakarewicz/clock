@@ -13,11 +13,14 @@ const minuteHand = document.querySelector('.clock__minute--js');
 const hourHand = document.querySelector('.clock__hour--js');
 
 function myDate() {
+    
     const date = new Date();
-
     const seconds = date.getSeconds();
-    const secondsMove = (seconds/60)*360 + 180;
+
+    if(seconds<=60){
+    const secondsMove = (seconds/60)*360+180;
     secondHand.style.transform = `rotate(${secondsMove}deg)`;
+    console.log(seconds);}
 
     const minutes = date.getMinutes();
     const minutesMove = (minutes/60)*360 +180;
