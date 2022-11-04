@@ -50,13 +50,25 @@ body {
 }
 
 .clock {
-  border: 10px solid white;
+  border: 6px solid white;
   border-radius: 50%;
   box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
   0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
-  height: 400px;
+  height: 15rem;
+  margin:0 auto;
   position: relative;
-  width: 400px;
+  width: 15rem;
+  @media screen and (min-width:375px){
+    border: 8px solid white;
+    height: 20rem;
+    width: 20rem;
+  }
+  @media screen and (min-width:768px){
+    border: 10px solid white;
+    height: 25rem;
+    width: 25rem;
+  }
+
   &::after {
     content: " ";
     background-color: black;
@@ -158,11 +170,22 @@ body {
 }
 
 .heading {
+  font-size:1.3em;
   font-weight: 700;
   margin: 36px;
   padding: 16px;
+  @media screen and (min-width:375px){
+font-size:1.5em;
+  }
+  @media screen and (min-width:768px){
+font-size:2em;
+  }
 }
 
+.main {
+  margin:0 auto;
+  width: 100%;
+}
 .special {
   background:black;
   border-radius: 50%;

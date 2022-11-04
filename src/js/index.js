@@ -12,7 +12,8 @@ function myDate() {
 
     const seconds = date.getSeconds() / 60;
     const secondsMove = seconds * 360 ;
-    secondHand.style.transform = `rotate(${secondsMove}deg)`;
+    if(seconds!=1){
+    secondHand.style.transform = `rotate(${secondsMove}deg)`;}
 
     const minutes = (seconds + date.getMinutes()) / 60;
     const minutesMove = minutes * 360;
