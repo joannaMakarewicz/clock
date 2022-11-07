@@ -41,12 +41,12 @@ body {
   animation: color 9s infinite linear;
   background: #33cccc;
   display: flex;
+  flex-shrink: 0;
   font-family: "Noto Nastaliq Urdu", serif;
   justify-content: center;
   text-align: center;
   min-width: 100vw;
-  min-height: 100vh;
-  padding: 16px;
+  min-height: 100%;
 }
 
 .clock {
@@ -166,12 +166,12 @@ body {
   }
 }
 
-.heading {
-  color:#006400;
-  font-size: 1.3em;
+.main {
+  min-width: 100vw;
+  &__heading {
+  color: #006400;
+  font-size: 1.5em;
   font-weight: 700;
-  margin: 36px;
-  padding: 16px;
   @media screen and (min-width: 375px) {
     font-size: 1.5em;
   }
@@ -179,10 +179,11 @@ body {
     font-size: 2em;
   }
 }
+}
 
 .main {
-  margin: 0 auto;
   width: 100%;
+  height: 100vh;;
 }
 .special {
   background: black;
@@ -198,14 +199,24 @@ body {
 .zone {
   &__clock {
     background-color: black;
-    border: 3px solid #006400;
+    border: 1px solid #006400;
     border-radius: 50%;
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px #006400,
       0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
-    height: 200px;
+    height: 6rem;
     margin: 0 auto;
     position: relative;
-    width: 200px;
+    width: 6rem;
+    @media screen and (min-width: 425px) {
+      border: 2px solid #006400;
+      height: 10rem;
+      width: 10rem;
+    }
+    @media screen and (min-width: 768px) {
+      border: 3px solid #006400;
+      height: 15rem;
+      width: 15rem;
+    }
     &::after {
       content: " ";
       background-color: white;
@@ -265,46 +276,54 @@ body {
   &__sign {
     color: white;
     height: 100%;
-    position:relative;
+    position: relative;
     width: 100%;
     &--1 {
-      margin:0;
+      margin: 0;
       position: absolute;
-      top:5%;
+      top: 5%;
       transform: translateX(-50%);
-
     }
     &--2 {
-      margin:0;
+      margin: 0;
       position: absolute;
-      top:45%;
-      right:5%;
+      top: 45%;
+      right: 5%;
       transform: translateX(-50%);
     }
     &--3 {
-      margin:0;
+      margin: 0;
       position: absolute;
-      top:85%;
+      top: 85%;
       transform: translateX(-50%);
     }
     &--4 {
-      margin:0;
+      margin: 0;
       position: absolute;
-      top:45%;
-      right:85%;
+      top: 45%;
+      right: 85%;
       transform: translateX(-50%);
     }
-
   }
 }
 
 .world {
-  column-gap: 20px;
+  column-gap: 2px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin:0;
   &__heading {
     grid-area: 1/1 / span 1 / span 3;
   }
   margin: 0 auto;
-  width: 80%;
+  @media screen and (min-width: 768px) {
+    column-gap: 5px;
+    width: 90%;
+  }
+}
+
+.local {
+  &__heading {
+    margin: 40px 0px;
+  }
 }
