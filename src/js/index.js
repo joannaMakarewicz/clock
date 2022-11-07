@@ -9,9 +9,11 @@ const hourHand = document.querySelector(".clock__hour--js");
 function myDate() {
   const date = new Date();
 
+ 
   const seconds = date.getSeconds() / 60;
   const secondsMove = seconds * 360;
-  secondHand.style.transform = `rotate(${secondsMove}deg)`;
+secondHand.style.transform = `rotate(${secondsMove}deg)`;
+
 
   const minutes = (seconds + date.getMinutes()) / 60;
   const minutesMove = minutes * 360;
@@ -20,8 +22,9 @@ function myDate() {
   const hours = (minutes + date.getHours()) / 12;
   const hoursMove = hours * 360;
   hourHand.style.transform = `rotate(${hoursMove}deg)`;
-}
 
+
+}
 setInterval(myDate, 1000);
 
 myDate();
