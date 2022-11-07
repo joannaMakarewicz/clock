@@ -1,4 +1,5 @@
 import "../scss/main.scss";
+import moment from 'moment/moment';
 
 console.log("HELLO. My name is Joanna. Nice to meet you on my website. Enjoy!");
 
@@ -28,3 +29,10 @@ secondHand.style.transform = `rotate(${secondsMove}deg)`;
 setInterval(myDate, 1000);
 
 myDate();
+
+
+const moment2 = require('moment-timezone');
+moment().tz("America/Los_Angeles").format();
+
+console.log(moment2);
+
