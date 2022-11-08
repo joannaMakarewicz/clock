@@ -71,9 +71,9 @@
           <article class="zone">
           <h3 class="zone__heading">London</h3>
           <div class="zone__clock">
-            <div class="zone__hour zone__hour--js"></div>
-            <div class="zone__minute zone__minute--js"></div>
-            <div class="zone__second zone__second--js"></div>
+            <div class="zone__hour hour--js" id="Europe/London"></div>
+            <div class="zone__minute minute--js" id="Europe/London"></div>
+            <div class="zone__second second--js" id="Europe/London"></div>
             <div class="zone__sign">
             <span class="zone__sign--1">12</span>
             <span class="zone__sign--2">3</span>
@@ -85,9 +85,9 @@
           <article class="zone">
             <h3 class="zone__heading">New York</h3>
               <div class="zone__clock">
-                <div class="zone__hour zone__hour--js"></div>
-                <div class="zone__minute zone__minute--js"></div>
-                <div class="zone__second zone__second--js"></div>
+                <div class="zone__hour hour__1--js" id="America/New_York"></div>
+                <div class="zone__minute minute__1--js" id="America/New_York"></div>
+                <div class="zone__second second__1--js" id="America/New_York"></div>
                 <div class="zone__sign">
                 <span class="zone__sign--1">12</span>
                 <span class="zone__sign--2">3</span>
@@ -99,9 +99,9 @@
           <article class="zone">
             <h3 class="zone__heading">Tokio</h3>
               <div class="zone__clock">
-                <div class="zone__hour zone__hour--js"></div>
-                <div class="zone__minute zone__minute--js"></div>
-                <div class="zone__second zone__second--js"></div>
+                <div class="zone__hour hour__2--js" id="Asia/Tokyo"></div>
+                <div class="zone__minute minute__2--js" id="Asia/Tokyo"></div>
+                <div class="zone__second second__2--js" id="Asia/Tokyo"></div>
                 <div class="zone__sign">
                 <span class="zone__sign--1">12</span>
                 <span class="zone__sign--2">3</span>
@@ -112,5 +112,6 @@
         </section>
 
     </main>
+    <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
   </body>
 </html>

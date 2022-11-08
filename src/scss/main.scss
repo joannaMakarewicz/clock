@@ -219,7 +219,7 @@ body {
 
     &::after {
       content: " ";
-      background-color: white;
+      background-color: red;
       border-radius: 50%;
       height: 10px;
       left: 50%;
@@ -258,7 +258,7 @@ body {
     transform: translateX(50%);
     transform-origin: bottom;
     transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
-    width: 2px;
+    width: 1px;
   }
   &__second {
     background: red;
@@ -271,7 +271,7 @@ body {
     transform: translateX(50%);
     transform-origin: bottom;
     transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
-    width: 1px;
+    width: 0.5px;
     z-index: 9;
   }
   &__sign {
