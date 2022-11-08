@@ -1,5 +1,5 @@
 import "../scss/main.scss";
-import moment from 'moment/moment';
+import moment from "moment/moment";
 
 console.log("HELLO. My name is Joanna. Nice to meet you on my website. Enjoy!");
 
@@ -10,11 +10,9 @@ const hourHand = document.querySelector(".clock__hour--js");
 function myDate() {
   const date = new Date();
 
- 
   const seconds = date.getSeconds() / 60;
   const secondsMove = seconds * 360;
-secondHand.style.transform = `rotate(${secondsMove}deg)`;
-
+  secondHand.style.transform = `rotate(${secondsMove}deg)`;
 
   const minutes = (seconds + date.getMinutes()) / 60;
   const minutesMove = minutes * 360;
@@ -23,16 +21,7 @@ secondHand.style.transform = `rotate(${secondsMove}deg)`;
   const hours = (minutes + date.getHours()) / 12;
   const hoursMove = hours * 360;
   hourHand.style.transform = `rotate(${hoursMove}deg)`;
-
-
 }
 setInterval(myDate, 1000);
 
 myDate();
-
-
-const moment2 = require('moment-timezone');
-moment().tz("America/Los_Angeles").format();
-
-console.log(moment2);
-
