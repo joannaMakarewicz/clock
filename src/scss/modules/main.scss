@@ -1,0 +1,19 @@
+@import "_variables";
+
+.main {
+    height: 100vh;
+    min-width: 100vw;
+    padding: 6px;
+    &__heading {
+      color: #006400;
+      font-size: 1.5em;
+      font-weight: 700;
+      text-shadow: 0 0 4px $secondColor;
+      @media screen and (min-width: 375px) {
+        font-size: 1.5em;
+      }
+      @media screen and (min-width: 768px) {
+        font-size: 2em;
+      }
+    }
+  }

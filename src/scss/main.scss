@@ -1,5 +1,9 @@
 @import "~normalize.css";
 @import "_variables";
+@import "modules/clock.scss";
+@import "modules/zone.scss";
+@import "modules/main.scss";
+@import "modules/world.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap");
 
 :root {
@@ -44,149 +48,13 @@ body {
   flex-shrink: 0;
   font-family: "Noto Nastaliq Urdu", serif;
   justify-content: center;
-  text-align: center;
   min-width: 100vw;
   min-height: 100%;
+  text-align: center;
 }
-
-.clock {
-  border: 6px solid white;
-  border-radius: 50%;
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
-    0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
-  height: 250px;
-  margin: 0 auto;
-  position: relative;
-  width: 250px;
-  @media screen and (min-width: 375px) {
-    border: 8px solid white;
-    height: 300px;
-    width: 300px;
-  }
-  @media screen and (min-width: 768px) {
-    border: 10px solid white;
-    height: 300px;
-    width: 300px;
-  }
-
-  &::after {
-    content: " ";
-    background-color: black;
-    border-radius: 50%;
-    height: 15px;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 15px;
-    z-index: 10;
-  }
-  &__hour {
-    background: black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 35%;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translateX(50%);
-    transform-origin: bottom;
-    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
-    width: 5px;
-  }
-  &__minute {
-    background: black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 40%;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translateX(50%);
-    transform-origin: bottom;
-    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
-    width: 3px;
-  }
-  &__second {
-    background: red;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 45%;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translateX(50%);
-    transform-origin: bottom;
-    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
-    width: 1px;
-    z-index: 9;
-  }
-  &__sign {
-    height: 100%;
-    position: absolute;
-    text-align: center;
-    transform: rotate(var(--rotation));
-    width: 100%;
-    &--1 {
-      --rotation: 30deg;
-    }
-    &--2 {
-      --rotation: 60deg;
-    }
-    &--3 {
-      --rotation: 90deg;
-    }
-    &--4 {
-      --rotation: 120deg;
-    }
-    &--5 {
-      --rotation: 150deg;
-    }
-    &--6 {
-      --rotation: 180deg;
-    }
-    &--7 {
-      --rotation: 210deg;
-    }
-    &--8 {
-      --rotation: 240deg;
-    }
-    &--9 {
-      --rotation: 270deg;
-    }
-    &--10 {
-      --rotation: 300deg;
-    }
-    &--11 {
-      --rotation: 330deg;
-    }
-    &--12 {
-      --rotation: 360deg;
-    }
-  }
-}
-
-.main {
-  height: 100vh;
-  min-width: 100vw;
-  padding:6px;
-  &__heading {
-  color: #006400;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-shadow: 0 0 4px white;
-  @media screen and (min-width: 375px) {
-    font-size: 1.5em;
-  }
-  @media screen and (min-width: 768px) {
-    font-size: 2em;
-  }
-}
-}
-
 
 .special {
-  background: black;
+  background: $mainColor;
   border-radius: 50%;
   height: 6px;
   margin: 16px 0px;
@@ -194,132 +62,6 @@ body {
   transform: translateX(-50%);
   width: 6px;
   z-index: 8;
-}
-
-.zone {
-  margin:0 auto;
-  &__clock {
-    background-color: black;
-    border: 1px solid #006400;
-    border-radius: 50%;
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px #006400,
-      0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
-    height: 100px;
-    margin: 0 auto;
-    position: relative;
-    width: 100px;
-    @media screen and (min-width: 425px) {
-      height: 150px;
-      width: 150px;
-    }
-    @media screen and (min-width: 768px) {
-      height: 200px;
-      width: 200px;
-    }
-
-    &::after {
-      content: " ";
-      background-color: red;
-      border-radius: 50%;
-      height: 10px;
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 10px;
-      z-index: 10;
-    }
-  }
-  &__heading {
-    margin:0 0 39px 0;
-    text-decoration:underline;
-  }
-  &__hour {
-    background: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 30%;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translateX(50%);
-    transform-origin: bottom;
-    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
-    width: 3px;
-  }
-  &__minute {
-    background: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 35%;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translateX(50%);
-    transform-origin: bottom;
-    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
-    width: 1px;
-  }
-  &__second {
-    background: red;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 40%;
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-    transform: translateX(50%);
-    transform-origin: bottom;
-    transition-timing-function: cubic-bezier(0.54, 1.79, 0.58, 1);
-    width: 0.5px;
-    z-index: 9;
-  }
-  &__sign {
-    color: white;
-    height: 100%;
-    position: relative;
-    width: 100%;
-    &--1 {
-      margin: 0;
-      position: absolute;
-      top: 5%;
-      transform: translateX(-50%);
-    }
-    &--2 {
-      margin: 0;
-      position: absolute;
-      top: 45%;
-      right: 5%;
-      transform: translateX(-50%);
-    }
-    &--3 {
-      margin: 0;
-      position: absolute;
-      top: 85%;
-      transform: translateX(-50%);
-    }
-    &--4 {
-      margin: 0;
-      position: absolute;
-      top: 45%;
-      right: 85%;
-      transform: translateX(-50%);
-    }
-  }
-}
-
-.world {
-  column-gap: 2px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin:0 auto;
-  @media screen and (min-width: 768px) {
-    max-width: 70%;
-  }
-  &__heading {
-    grid-area: 1/1 / span 1 / span 3;
-    margin: 40px 0;
-  }
 }
 
 .local {
