@@ -2,8 +2,9 @@
 
 .main {
     height: 100vh;
+    margin:0;
     min-width: 100vw;
-    padding: 6px;
+    padding:0;
     &__heading {
       color: #006400;
       font-size: 1.5em;

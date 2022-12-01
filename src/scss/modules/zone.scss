@@ -9,19 +9,14 @@
       border-radius: 50%;
       box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px #006400,
         0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
-      height: 100px;
+      height: 200px;
       margin: 0 auto;
       position: relative;
-      width: 100px;
-      @media screen and (min-width: 425px) {
-        height: 150px;
-        width: 150px;
-      }
+      width: 200px;
       @media screen and (min-width: 768px) {
         height: 200px;
         width: 200px;
       }
-  
       &::after {
         content: " ";
         background-color: $additionalColor;
@@ -36,7 +31,7 @@
       }
     }
     &__heading {
-      margin: 0 0 39px 0;
+      margin: 40px 0 20px 0;
       text-decoration: underline;
     }
     &__hour {
@@ -81,13 +76,14 @@
     }
     &__sign {
       color: white;
+      font-size: 14px;
       height: 100%;
       position: relative;
       width: 100%;
       &--1 {
         margin: 0;
         position: absolute;
-        top: 5%;
+        top: 4%;
         transform: translateX(-50%);
       }
       &--2 {
@@ -107,7 +103,7 @@
         margin: 0;
         position: absolute;
         top: 45%;
-        right: 85%;
+        right: 88%;
         transform: translateX(-50%);
       }
     }
